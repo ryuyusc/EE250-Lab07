@@ -46,6 +46,7 @@ while True:
   for i in range(0, 50):
     sound = mcp.read_adc(1)
     print(sound)
+    time.sleep(0.1)
 
 
   
