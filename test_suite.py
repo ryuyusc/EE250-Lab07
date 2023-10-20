@@ -51,7 +51,7 @@ while True:
   for i in range(0, 50):
     sound = mcp.read_adc(1)
     soundValue = int(sound)
-    if (soundValue > 820):
+    if (soundValue > 600):
       GPIO.output(11, GPIO.HIGH)
     print(sound)
     time.sleep(0.1)
