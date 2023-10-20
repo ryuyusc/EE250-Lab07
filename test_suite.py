@@ -33,7 +33,7 @@ while True:
   for i in range(0, 50):
     light = mcp.read_adc(0)
     lightValue = int(light)
-    if (lightValue > 200):
+    if (lightValue > 300):
       print("bright")
     else:
       print("dark")
@@ -51,7 +51,7 @@ while True:
   for i in range(0, 50):
     sound = mcp.read_adc(1)
     soundValue = int(sound)
-    if (soundValue > 600):
+    if (soundValue > 500):
       GPIO.output(11, GPIO.HIGH)
     print(sound)
     time.sleep(0.1)
