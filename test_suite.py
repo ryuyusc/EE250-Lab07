@@ -33,7 +33,7 @@ while True:
   for i in range(0, 50):
     light = mcp.read_adc(0)
     lightValue = int(light)
-    if (lightValue > 150):
+    if (lightValue > 125):
       print("bright")
     else:
       print("dark")
