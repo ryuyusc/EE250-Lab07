@@ -18,7 +18,35 @@ mcp = Adafruit_MCP3008.MCP3008(spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE))
 # get reading from adc 
 # mcp.read_adc(adc_channel)
 
+# starts with LED off
+GPIO.output(11, GPIO.LOW)
+
 while True: 
-  GPIO.output(11, GPIO.HIGH)
-  time.sleep(0.5) 
+  # blinks LED 5 times
+  for i in range(0, 5):
+    GPIO.output(11, GPIO.HIGH)
+    time.sleep(0.5) 
+    GPIO.output(11, GPIO.LOW)
+    time.sleep(0.5)
+  
+  #reads light sensor
+  for i in range(0, 50):
+    light = mcp.read_adc(0)
+    print(light)
+    time.sleep(0.1)
+  
+  #blinks LED 4 times
+  for i in range(0, 4):
+    GPIO.output(11, GPIO.HIGH)
+    time.sleep(0.2)
+    GPIO.output(11, GPIO.LOW)
+    time.sleep(0.2)
+
+  # reads sound sensor
+  for i in range(0, 50):
+    sound = mcp.read_adc(1)
+    print(sound)
+
+
+  
  
